@@ -1,1 +1,2 @@
 SERVER_URL=
+RUST_LOG=

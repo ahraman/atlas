@@ -17,6 +17,8 @@ impl Server {
 
         let server_url = &app.config.server_url;
         let listener = TcpListener::bind(server_url).await?;
+        tracing::info!("listening at: {server_url}");
+
         Ok(axum::serve(listener, router).await?)
     }
 }
