@@ -1,3 +1,5 @@
+use axum::response::{IntoResponse, Response};
+
 pub type Result<T> = std::result::Result<T, Error>;
 
 #[derive(Debug, thiserror::Error)]
@@ -8,4 +10,10 @@ pub enum Error {
     Dotenvy(#[from] dotenvy::Error),
     #[error("environment variable {0} returned error: {1}")]
     Env(String, #[source] std::env::VarError),
+}
+
+impl IntoResponse for Error {
+    fn into_response(self) -> Response {
+        format!("{:?}\n\n{}", self, self).into_response()
+    }
 }
