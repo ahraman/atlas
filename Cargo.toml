@@ -1,0 +1,9 @@
+[package]
+name = "atlas"
+version = "0.1.0"
+authors = ["Ahraman <ahraman.programming@gamil.com>"]
+
+edition = "2024"
+rust-version = "1.97.0"
+
+[dependencies]
