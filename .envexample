@@ -1,2 +1,3 @@
+SITE_NAME="Atlas"
 SERVER_URL=
 RUST_LOG=

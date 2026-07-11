@@ -1,5 +1,6 @@
 mod routes;
 pub mod server;
+pub mod templates;
 
 use std::{ops::Deref, sync::Arc};
 

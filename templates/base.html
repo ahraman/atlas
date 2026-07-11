@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{{ site.name }}{% endblock %}</title>
+
+    <link rel="stylesheet" href="/static/stylesheets/main.css">
+
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <div id="main-container">
+      <main>
+        <div id="content">
+          {% block content %}{% endblock %}
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
