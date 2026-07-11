@@ -16,6 +16,7 @@ tower = "0.5.3"
 tower-http = { version = "0.7.0", features = ["normalize-path", "fs"] }
 
 dotenvy = "0.15.7"
+askama = "0.16.0"
 
 tracing = "0.1.44"
 tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
