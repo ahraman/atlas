@@ -10,6 +10,8 @@ pub enum Error {
     Dotenvy(#[from] dotenvy::Error),
     #[error("environment variable {0} returned error: {1}")]
     Env(String, #[source] std::env::VarError),
+    #[error(transparent)]
+    Askama(#[from] askama::Error),
 }
 
 impl IntoResponse for Error {
