@@ -16,6 +16,7 @@ impl Server {
     }
 
     pub async fn run(self, app: Arc<App>) -> Result<()> {
+        tracing::info!("starting website: {}", app.config.site_name);
         let router = self.build_router(AppState::new(app.clone()));
         let middleware = NormalizePathLayer::trim_trailing_slash().layer(router);
         let service =
