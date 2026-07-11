@@ -1,10 +1,14 @@
 use axum::{Router, response::IntoResponse, routing::get};
+use tower_http::services::ServeDir;
 
 use crate::web::AppState;
 
 impl super::Server {
     pub(super) fn build_router(&self, state: AppState) -> Router {
-        Router::new().route("/", get(root)).with_state(state)
+        Router::new()
+            .route("/", get(root))
+            .nest_service("/static", ServeDir::new("static"))
+            .with_state(state)
     }
 }
 
